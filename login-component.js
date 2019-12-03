@@ -98,7 +98,7 @@ class LoginComponent extends HTMLElement {
     }
 
     try {
-      const response = await postData('http://127.0.0.1:3000/login', data);
+      const response = await postData(environment.apiAuth, data);
       console.log(response);
     } catch (error) {
       // console.error(error);
