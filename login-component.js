@@ -74,9 +74,6 @@ class LoginComponent extends HTMLElement {
     this._shadowRoot = this.attachShadow({ 'mode': 'open' });
     this._shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this.email = 'user111@test.test';
-    this.password = '1111';
-
     this._shadowRoot.querySelector('.email-block').addEventListener('change', (event) => {
       this.email = event.target.value;
     });
