@@ -96,7 +96,14 @@ class LoginComponent extends HTMLElement {
 
     try {
       const response = await postData(environment.apiAuth, data);
-      console.log(response);
+      const { redirect } = response;
+      if (!(redirect)) {
+        // error
+        return;
+      }
+
+      window.location = redirect;
+
     } catch (error) {
       // console.error(error);
     }
