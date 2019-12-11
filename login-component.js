@@ -14,20 +14,22 @@ template.innerHTML = `
 
   .login-form h1 {
     text-align: center;
-    color: #3e5072;
+    color: #a9b2c3;
   }
 
   input {
-    height: 30px;
+    height: 25px;
     background: #a9d7ff11;
+    color: #eee;
     border: 1px solid #a9d7ffee;
     border-radius: 5px;
     padding: 5px 10px;
   }
 
   label {
-    color: #3e5072ee;
+    color: #8da6d6ed;
     font-weight: bold;
+    margin-bottom: 5px;
   }
 
   .row {
@@ -38,7 +40,7 @@ template.innerHTML = `
 
   .submit-btn {
     width: 100%;
-    height: 50px;
+    height: 40px;
     background: #589edc;
     color: #eeeeee;
     font-weight: bold;
@@ -52,7 +54,7 @@ template.innerHTML = `
 </style>
 
 <div class="login-form">
-  <h1>Login</h1>
+  <h1>Welcome!</h1>
   <div class="email-block row">
     <label>Email address:</label>
     <input type="text">
@@ -98,14 +100,13 @@ class LoginComponent extends HTMLElement {
       const response = await postData(environment.apiAuth, data);
       const { redirect } = response;
       if (!(redirect)) {
-        // error
         return;
       }
 
       window.location = redirect;
 
     } catch (error) {
-      // console.error(error);
+      alert('Wrong credentials!');
     }
   }
 }
