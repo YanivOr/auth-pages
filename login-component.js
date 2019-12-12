@@ -22,7 +22,7 @@ template.innerHTML = `
     background: #a9d7ff11;
     color: #eee;
     border: 1px solid #a9d7ffee;
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 5px 10px;
   }
 
